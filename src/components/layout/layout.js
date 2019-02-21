@@ -2,13 +2,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-import Header from "../header/header.js"
-import Footer from "../footer/footer.js"
+import Header from "../header/header"
+import Footer from "../footer/footer"
 import "./layout.css"
 
 const Layout = ({ children }) => (
   <StaticQuery
-    query={graphql`
+  query={graphql`
       query SiteTitleQuery {
         site {
           siteMetadata {
@@ -21,7 +21,7 @@ const Layout = ({ children }) => (
       <>
         
         <div className="container-main">
-        <Header siteTitle={data.site.siteMetadata.author} />
+        <Header siteTitle={data.site.siteMetadata.title} />
           <main>{children}</main>
          <Footer/>
         </div>
