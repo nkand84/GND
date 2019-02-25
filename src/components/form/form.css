@@ -1,3 +1,27 @@
 #form-display{
-    margin-top:40px;
+    max-width:700px;
+    margin-top:70px;
+    background-color: #fff;
+    border-radius:10px;
+    margin-bottom: 40px;
+    
+}
+.form-wrapper{
+    padding:1.5rem;
+   
+}
+#freq-top{
+   margin-top:20px;
+}
+
+p.MuiTypography-root-8.MuiTypography-body1-17{ 
+    letter-spacing:3px;
+    margin-top:20px;
+ 
+}
+
+hr.MuiDivider-root-44.MuiDivider-root-47 {
+    margin-top:50px;
+    margin-bottom:10px;
+    width: 90%;
 }
