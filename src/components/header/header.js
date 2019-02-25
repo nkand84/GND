@@ -1,22 +1,14 @@
 import { Link } from "gatsby"
 import React from "react"
 import "./header.css"
+import logo from "../../images/logo.svg"
 
 const Header = () => (
   <header className="header-display">
     <div className="header-main-content">
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-         
-        </Link>
-      </h1>
-    </div>
+     <img src={logo} className="main-logo" alt="gurunanakdwara logo"/>
+     <span className="secure-info">🔒 Secure Response</span>
+     </div>
   </header>
 );
 
