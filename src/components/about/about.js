@@ -3,9 +3,9 @@ import "./about.css"
   
 const About = () => (
   <section className="hero-section">
-  <h1>Welcome to Guru Nanak Dwara</h1> 
+  <h1>Thank you for supporting <br/> Guru Nanak Dwara !</h1> 
     <div className="about-main-content">
-    Guru Nanak Dwara, which means "Gate to Guru Nanak," was established in 1970 as the first Gurdwara in the state of Arizona. Today, it continues to serve the community as a vibrant spiritual campus in the center of historic Phoenix. Guru Nanak was the founder and first Guru of Sikhism, and taught that all humans are equal in the eyes of the One Creator.
+    <p>Guru Nanak Dwara was founded in 1970 as an Ashram (spiritual learning center) committed to practicing both the Sikh way of life and Kundalini Yoga as taught by Yogi Bhajan. In the early days, many of those attracted to Guru Nanak Dwara were the soul-searching youth of the consciousness revolution. Guru Nanak Dwara was unlike other collectives of the time as it provided a drug and alcohol free environment where spiritual discipline (daily Sadhana) and selfless service (Seva) were the means of peace, calm and delight. Bonds of support were formed through countless hours of meditation, singing, cooking, working and eating together.</p>
      </div>
   </section>
 );

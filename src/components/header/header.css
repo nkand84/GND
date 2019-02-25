@@ -1,8 +1,10 @@
 
 .header-display{
-        background: #ccc;
+        background: #fff;
         /* margin-bottom: 1.45rem; */
         width:100%;
+        border-bottom:3px solid #F2D36C;
+        position: relative;
      
 }
 .header-main-content{   
@@ -11,11 +13,16 @@
         
 }
 .main-logo{
-    width: 60px;
+    overflow:hidden;   
+    width: 70px;
     height:auto;
-    margin: 0;    padding: 10px;
+    margin: 0;   
+    padding: 10px 10px 0 10px;
 }
 
 .secure-info{
         float: right;
+        position: absolute;
+        top:25px;
+        right:50px;
 }

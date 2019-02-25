@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import "./form.css";
+import About from "../about/about"
+import {Elements, StripeProvider} from 'react-stripe-elements';
+import CheckoutForm from '../checkoutForm/CheckoutForm';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
@@ -19,9 +22,8 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: 325,
-    height:100,
-    
+    width: 250,
+       
   },
   textButton: {
       width:50,
@@ -272,8 +274,9 @@ class OutlinedTextFields extends React.Component {
     return (
         
       <form className={classes.container} id="form-display" noValidate autoComplete="off">
-      <div className="form-groups">
-       <Typography className={classes.heading}>Donation Amount</Typography>
+      <div className="form-wrapper">
+      <About/>
+       <Typography className={classes.heading}>DONATION AMOUNT</Typography>
        <Divider light />
         <Button variant="outlined" color="primary" className={classes.button}>
           $31
@@ -305,9 +308,17 @@ class OutlinedTextFields extends React.Component {
         <Button variant="outlined" color="primary" className={classes.button}>
         <TextField type="name" className={classes.textButton}/>
         </Button>
+        <Typography id="freq-top" className={classes.heading}>FREQUENCY</Typography>
+       <Divider light />
+       <Button variant="outlined" color="primary" className={classes.button}>
+          One-time Donation
+        </Button>
+        <Button variant="outlined" color="primary" className={classes.button}>
+         Monthly Donation
+        </Button>
         </div>
-        <div className="form-groups">
-      <Typography className={classes.heading}>Contact Information</Typography>
+        <div  className="form-wrapper">
+      <Typography className={classes.heading}>CONTACT INFORMATION</Typography>
       <Divider light />
        <TextField
           required
@@ -429,7 +440,18 @@ class OutlinedTextFields extends React.Component {
             </option>
           ))}
         </TextField>
+        <Typography className={classes.heading}>CARD INFORMATION</Typography>
+      <Divider light />
+        <StripeProvider apiKey="pk_test_aXbuETi1xmBFTS9j5NwcIylC">
+        <div>
+          <Elements>
+            <CheckoutForm/>
+          </Elements>
         </div>
+      </StripeProvider>
+        </div>
+       
+            
       </form>
     
     );
