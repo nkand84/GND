@@ -1,7 +1,13 @@
-.donate{
-    margin-top:40px;
+.donate-display{
+    width:30%;
+    margin:0 auto;
 }
-
+#donate{
+  
+    text-align: center;
+    background-color: #F2D36C;
+    margin-bottom:30px;
+}
 .card-layout{
     border:1px solid #ccc;
     width:90%;
