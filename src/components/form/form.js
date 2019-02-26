@@ -22,7 +22,7 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: 250,
+    width: 200,
        
   },
   textButton: {
@@ -37,6 +37,14 @@ const styles = theme => ({
   },
     button: {
       margin: theme.spacing.unit,
+      backgroundColor: '#F2D36C',
+      width:'60px',
+      
+    },
+    button1: {
+        margin: theme.spacing.unit,
+        backgroundColor: '#F2D36C',
+        width:'200px',
     },
     input: {
       display: 'none',
@@ -310,10 +318,10 @@ class OutlinedTextFields extends React.Component {
         </Button>
         <Typography id="freq-top" className={classes.heading}>FREQUENCY</Typography>
        <Divider light />
-       <Button variant="outlined" color="primary" className={classes.button}>
+       <Button variant="outlined" color="primary" className={classes.button1}>
           One-time Donation
         </Button>
-        <Button variant="outlined" color="primary" className={classes.button}>
+        <Button variant="outlined" color="primary" className={classes.button1}>
          Monthly Donation
         </Button>
         </div>
