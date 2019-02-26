@@ -335,7 +335,7 @@ class OutlinedTextFields extends React.Component {
          Monthly Donation
         </Button>
         </div>
-        <div  className="form-wrapper">
+        <div  className="form-wrapper2">
       <Typography className={classes.heading}>CONTACT INFORMATION</Typography>
       <Divider light />
        <TextField
