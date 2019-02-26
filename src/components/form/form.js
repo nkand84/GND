@@ -22,7 +22,13 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: 200,
+    // width: 200,
+    [theme.breakpoints.between('sm','md')]: {
+        width:'45%',
+      },
+      [theme.breakpoints.between('sm','xs')]: {
+        width:'100%',
+      },
        
   },
   textButton: {
@@ -43,8 +49,12 @@ const styles = theme => ({
     },
     button1: {
         margin: theme.spacing.unit,
+        width:'45%',
+        [theme.breakpoints.between('xs','sm')]: {
+            width:'100%',
+          },
         backgroundColor: '#F2D36C',
-        width:'200px',
+        
     },
     input: {
       display: 'none',
