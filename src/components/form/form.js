@@ -48,12 +48,10 @@ const styles = theme => ({
       margin: theme.spacing.unit,
       backgroundColor: '#F2D36C',
       width:'15%',
-      border:0,
-      
+            
     },
     button1: {
         margin: theme.spacing.unit,
-        border:0,
         width:'45%',
         [theme.breakpoints.between('xs','sm')]: {
             width:'100%',
@@ -65,6 +63,7 @@ const styles = theme => ({
       display: 'none',
     },
 });
+
 
 const states = [
     {
@@ -302,43 +301,43 @@ class OutlinedTextFields extends React.Component {
        <Typography className={classes.heading}>DONATION AMOUNT</Typography>
        <Divider light />
        <div className="button-display">
-        <Button variant="outlined" color="primary" className={classes.button}>
+        <Button variant="contained" color="primary" className={classes.button}>
           $31
         </Button>
-        <Button variant="outlined" color="primary" className={classes.button}>
+        <Button variant="contained" color="primary" className={classes.button}>
           $51
         </Button>
-        <Button variant="outlined" color="primary" className={classes.button}>
+        <Button variant="contained" color="primary" className={classes.button}>
           $101
         </Button>
-        <Button variant="outlined" color="primary" className={classes.button}>
+        <Button variant="contained" color="primary" className={classes.button}>
           $251
         </Button>
-        <Button variant="outlined" color="primary" className={classes.button}>
+        <Button variant="contained" color="primary" className={classes.button}>
           $501
         </Button>
-        <Button variant="outlined" color="primary" className={classes.button}>
+        <Button variant="contained" color="primary" className={classes.button}>
           $1001
         </Button>
-        <Button variant="outlined" color="primary" className={classes.button}>
+        <Button variant="contained" color="primary" className={classes.button}>
           $2001
           </Button>
-          <Button variant="outlined" color="primary" className={classes.button}>
+          <Button variant="contained" color="primary" className={classes.button}>
           $3001
         </Button>
-        <Button variant="outlined" color="primary" className={classes.button}>
+        <Button variant="contained" color="primary" className={classes.button}>
           $5001
         </Button>
-        <Button variant="outlined" color="primary" className={classes.button}>
+        <Button variant="contained"  className={classes.button}>
         <TextField type="name" className={classes.textButton}/>
         </Button>
         </div>
         <Typography id="freq-top" className={classes.heading}>FREQUENCY</Typography>
        <Divider light />
-       <Button variant="outlined" color="primary" className={classes.button1}>
+       <Button variant="contained" color="primary" className={classes.button1}>
           One-time Donation
         </Button>
-        <Button variant="outlined" color="primary" className={classes.button1}>
+        <Button variant="contained" color="primary" className={classes.button1}>
          Monthly Donation
         </Button>
         </div>

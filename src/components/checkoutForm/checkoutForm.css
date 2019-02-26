@@ -3,10 +3,13 @@
     margin:0 auto;
 }
 #donate{
-  
+    width: 100%;
     text-align: center;
     background-color: #F2D36C;
     margin-bottom:30px;
+}
+#donate:hover{
+    background-color: #3F51B5;
 }
 .card-layout{
     border:1px solid #ccc;
