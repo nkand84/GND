@@ -39,7 +39,7 @@ class CheckoutForm extends Component {
         <CardElement className="card-layout"/>
         <br/>
         <div className="donate-display">
-        <Button onClick={this.submit} variant="outlined" color="primary" id="donate">DONATE NOW</Button>
+        <Button onClick={this.submit} variant="outlined" color="primary" id="donate">DONATE</Button>
         </div>     
       </div>
     );

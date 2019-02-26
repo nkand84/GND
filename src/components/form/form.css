@@ -17,7 +17,10 @@
 #freq-top{
    margin-top:20px;
 }
-
+.button-display{
+    margin:0 auto;
+    text-align:center;
+}
 p.MuiTypography-root-8.MuiTypography-body1-17{ 
     letter-spacing:3px;
     margin-top:20px;
