@@ -23,6 +23,9 @@ const styles = theme => ({
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     // width: 200,
+    [theme.breakpoints.between('md','lg')]: {
+        width:'47%',
+      },
     [theme.breakpoints.between('sm','md')]: {
         width:'45%',
       },
@@ -44,11 +47,13 @@ const styles = theme => ({
     button: {
       margin: theme.spacing.unit,
       backgroundColor: '#F2D36C',
-      width:'60px',
+      width:'15%',
+      border:0,
       
     },
     button1: {
         margin: theme.spacing.unit,
+        border:0,
         width:'45%',
         [theme.breakpoints.between('xs','sm')]: {
             width:'100%',
@@ -271,7 +276,7 @@ class OutlinedTextFields extends React.Component {
     lastName: '',
     email:'',
     phoneNumber:'',
-    residentialAddress:'',
+    address:'',
     unitNumber:'',
     zipCode:'',
     city:'',
@@ -296,6 +301,7 @@ class OutlinedTextFields extends React.Component {
       <About/>
        <Typography className={classes.heading}>DONATION AMOUNT</Typography>
        <Divider light />
+       <div className="button-display">
         <Button variant="outlined" color="primary" className={classes.button}>
           $31
         </Button>
@@ -326,6 +332,7 @@ class OutlinedTextFields extends React.Component {
         <Button variant="outlined" color="primary" className={classes.button}>
         <TextField type="name" className={classes.textButton}/>
         </Button>
+        </div>
         <Typography id="freq-top" className={classes.heading}>FREQUENCY</Typography>
        <Divider light />
        <Button variant="outlined" color="primary" className={classes.button1}>
@@ -372,7 +379,7 @@ class OutlinedTextFields extends React.Component {
         <TextField
           required
           id="outlined-email-input"
-          label="Email Address"
+          label="Email"
           className={classes.textField}
           type="email"
           name="email"
@@ -394,11 +401,11 @@ class OutlinedTextFields extends React.Component {
         <TextField
           required
           id="outlined-address-input"
-          label="Residential Address"
+          label="Address"
           className={classes.textField}
           type="address"
-          name="residentialaddress"
-          autoComplete="residentialaddress"
+          name="address"
+          autoComplete="address"
           margin="normal"
           variant="outlined"
         />
