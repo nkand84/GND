@@ -4,10 +4,10 @@
     background-color: #fff;
     border-radius:10px;
     margin-bottom: 40px;
-    
+       
 }
 .form-wrapper{
-    padding:1.5rem;
+    padding:1rem;
    
 }
 #freq-top{
@@ -25,3 +25,17 @@ hr.MuiDivider-root-44.MuiDivider-root-47 {
     margin-bottom:10px;
     width: 90%;
 }
+
+@media (max-width:570px) and (min-width:300px) {
+    .form-wrapper{
+        /* padding:1rem; */
+        overflow: hidden;
+       
+    }
+}
+
+
+/* #F2D36C; */
+
+
+

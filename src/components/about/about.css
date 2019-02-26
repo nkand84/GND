@@ -1,9 +1,15 @@
 .hero-section{
  
     text-align: center;
-    margin-top: 50px;
+    margin-top:20px;
    
 }
 .about-main-content{
     text-align: justify;
+}
+
+@media (max-width:640px) and (min-width:300px) {
+   .hero-section{
+       padding-right:8px;
+   }
 }
