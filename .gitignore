@@ -67,3 +67,11 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# Stripe secret API key
+STRIPE_SECRET_KEY=sk_test_xxx
+
+# dotenv environment variables files
+.env
+.env.development
+.env.production

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import axios from 'axios';
 import "./form.css";
 import About from "../about/about"
 import {Elements, StripeProvider} from 'react-stripe-elements';
@@ -273,13 +274,13 @@ class OutlinedTextFields extends React.Component {
     firstName: '',
     middleName:'',
     lastName: '',
-    email:'',
-    phoneNumber:'',
-    address:'',
-    unitNumber:'',
-    zipCode:'',
+    emailAddress:'',
+    contactNumber:'',
+    address1:'',
+    address2:'',
+    postalCode:'',
     city:'',
-    state:''
+    stateProvinceGeoId:''
 
   
   };
@@ -290,54 +291,82 @@ class OutlinedTextFields extends React.Component {
     });
   };
 
+//   submit function
+handleSubmit = event => {
+    event.preventDefault();
+
+    const user = {
+        firstName: this.state.firstName,
+        middleName:this.state.middleName,
+        lastName: this.state.lastName,
+        emailAddress:this.state.emailAddress,
+        contactNumber:this.state.contactNumber,
+        address1:this.state.address1,
+        address2:this.state.address2,
+        postalCode:this.state.postalCode,
+        city:this.state.city,
+        stateProvinceGeoId:this.state.stateProvinceGeoId
+    };
+    console.log(user);
+
+    axios.post(`http:127.0.0.1:8080/apps/Donation/NewDonor/DonationForm`,
+    {
+      user
+    }).then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+  }
+
+
   render() {
     const { classes } = this.props;
 
     return (
         
-      <form className={classes.container} id="form-display" noValidate autoComplete="off">
+      <form className={classes.container}  id="form-display" noValidate autoComplete="off">
       <div className="form-wrapper">
       <About/>
        <Typography className={classes.heading}>DONATION AMOUNT</Typography>
        <Divider light />
        <div className="button-display">
-        <Button variant="contained" color="primary" className={classes.button}>
+        <Button variant="contained" className={classes.button}>
           $31
         </Button>
-        <Button variant="contained" color="primary" className={classes.button}>
+        <Button variant="contained" className={classes.button}>
           $51
         </Button>
-        <Button variant="contained" color="primary" className={classes.button}>
+        <Button variant="contained" className={classes.button}>
           $101
         </Button>
-        <Button variant="contained" color="primary" className={classes.button}>
+        <Button variant="contained" className={classes.button}>
           $251
         </Button>
-        <Button variant="contained" color="primary" className={classes.button}>
+        <Button variant="contained" className={classes.button}>
           $501
         </Button>
-        <Button variant="contained" color="primary" className={classes.button}>
+        <Button variant="contained" className={classes.button}>
           $1001
         </Button>
-        <Button variant="contained" color="primary" className={classes.button}>
+        <Button variant="contained" className={classes.button}>
           $2001
           </Button>
-          <Button variant="contained" color="primary" className={classes.button}>
+          <Button variant="contained" className={classes.button}>
           $3001
         </Button>
-        <Button variant="contained" color="primary" className={classes.button}>
+        <Button variant="contained" className={classes.button}>
           $5001
         </Button>
         <Button variant="contained"  className={classes.button}>
-        <TextField type="name" className={classes.textButton}/>
+        <TextField className={classes.textButton}/>
         </Button>
         </div>
         <Typography id="freq-top" className={classes.heading}>FREQUENCY</Typography>
        <Divider light />
-       <Button variant="contained" color="primary" className={classes.button1}>
+       <Button variant="contained" className={classes.button1}>
           One-time Donation
         </Button>
-        <Button variant="contained" color="primary" className={classes.button1}>
+        <Button variant="contained" className={classes.button1}>
          Monthly Donation
         </Button>
         </div>
@@ -345,10 +374,10 @@ class OutlinedTextFields extends React.Component {
       <Typography className={classes.heading}>CONTACT INFORMATION</Typography>
       <Divider light />
        <TextField
-          required
           id="outlined-name"
           label="First Name"
           className={classes.textField}
+          name="firstName"
           value={this.state.firstName}
           onChange={this.handleChange('firstName')}
           margin="normal"
@@ -358,53 +387,52 @@ class OutlinedTextFields extends React.Component {
           id="outlined-name"
           label="M.I."
           className={classes.textField}
+          name="middleName"
           value={this.state.middleName}
           onChange={this.handleChange('middleName')}
           margin="normal"
           variant="outlined"
         />
          <TextField
-          required
           id="outlined-name"
           label="Last Name"
           className={classes.textField}
+          name="lastName"
           value={this.state.lastName}
           onChange={this.handleChange('lastName')}
           margin="normal"
           variant="outlined"
         />
-        
-     
         <TextField
-          required
           id="outlined-email-input"
           label="Email"
           className={classes.textField}
-          type="email"
-          name="email"
+          name="emailAddress"
+          value={this.state.emailAddress}
           autoComplete="email"
+          onChange={this.handleChange('emailAddress')}
           margin="normal"
           variant="outlined"
         />
         <TextField
-        required
           id="outlined-phonenumber-input"
           label="Phone Number"
           className={classes.textField}
-          type="phonenumber"
-          name="phonenumber"
+          name="contactNumber"
+          value={this.state.contactNumber}
           autoComplete="phonenumber"
+          onChange={this.handleChange('contactNumber')}
           margin="normal"
           variant="outlined"
         />
         <TextField
-          required
           id="outlined-address-input"
           label="Address"
           className={classes.textField}
-          type="address"
-          name="address"
+          value={this.state.address1}
+          name="address1"
           autoComplete="address"
+          onChange={this.handleChange('address1')}
           margin="normal"
           variant="outlined"
         />
@@ -413,31 +441,32 @@ class OutlinedTextFields extends React.Component {
           id="outlined-unitnumber-input"
           label="Apt #, Unit #"
           className={classes.textField}
-          type="unitnumber"
-          name="unitnumber"
+          value={this.state.address2}
+          name="address2"
           autoComplete="unitnumber"
+          onChange={this.handleChange('address2')}
           margin="normal"
           variant="outlined"
         />
         <TextField
-          required
           id="outlined-zipcode-input"
           label="ZIP Code"
           className={classes.textField}
-          type="number"
-          name="zipcode"
+          value={this.state.postalCode}
+          name="postalCode"
           autoComplete="zipcode"
+          onChange={this.handleChange('postalCode')}
           margin="normal"
           variant="outlined"
         />
         <TextField
-          required
           id="outlined-city-input"
           label="City"
           className={classes.textField}
-          type="name"
+          value={this.state.city}
           name="city"
           autoComplete="city"
+          onChange={this.handleChange('city')}
           margin="normal"
           variant="outlined"
         />
@@ -446,9 +475,10 @@ class OutlinedTextFields extends React.Component {
           id="outlined-select-states"
           select
           label="State"
+          name="stateProvinceGeoId"
           className={classes.textField}
-          value={this.state.currency}
-          onChange={this.handleChange('states')}
+          value={this.state.stateProvinceGeoId}
+          onChange={this.handleChange('stateProvinceGeoId')}
           SelectProps={{
             native: true,
             MenuProps: {
@@ -463,7 +493,9 @@ class OutlinedTextFields extends React.Component {
               {option.label}
             </option>
           ))}
+        
         </TextField>
+        <Button variant="contained" color="primary" onClick={this.handleSubmit}> Submit </Button>
         <Typography className={classes.heading}>CARD INFORMATION</Typography>
       <Divider light />
         <StripeProvider apiKey="pk_test_aXbuETi1xmBFTS9j5NwcIylC">
