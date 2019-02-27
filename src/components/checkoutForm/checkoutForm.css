@@ -7,9 +7,10 @@
     text-align: center;
     background-color: #F2D36C;
     margin-bottom:30px;
+    color: #000;
 }
 #donate:hover{
-    background-color: #3F51B5;
+    background-color: rgb(177, 168, 155);
 }
 .card-layout{
     border:1px solid #ccc;

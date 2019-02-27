@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
@@ -19,6 +20,8 @@ class CheckoutForm extends Component {
     this.submit = this.submit.bind(this);
   }
 //user clicked submit
+//hits stripe api
+//hits moqui API and saves data in db
   async submit(ev) {
     let {token} = await this.props.stripe.createToken({name: "Name"});
     let response = await fetch("/charge", {
@@ -38,9 +41,9 @@ class CheckoutForm extends Component {
         {/* <p>Would you like to complete the purchase?</p> */}
         <CardElement className="card-layout"/>
         <br/>
-        <div className="donate-display">
+        {/* <div className="donate-display">
         <Button onClick={this.submit} variant="contained" color="primary" id="donate">DONATE</Button>
-        </div>     
+        </div>      */}
       </div>
     );
   }
